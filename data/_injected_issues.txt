@@ -1,0 +1,23 @@
+Known data-quality issues intentionally injected into this dataset
+(for validating day_1_analysis.py's validate_*() functions):
+
+- Duplicate hotel record injected: hotel_id=6004
+- Missing hotel_rating injected: hotel_id=6008
+- Invalid star_rating (9) injected: hotel_id=6013
+- Duplicate guest record injected: guest_id=7011
+- Duplicate room record injected: room_id=8016
+- Room with invalid hotel_id (9999) injected: room_id=8021
+- Invalid room_type ('Penthouse') injected: room_id=8026
+- Duplicate booking_id injected: booking_id=90051
+- Check-out before check-in injected: booking_id=90061
+- Zero-night booking injected: booking_id=90071
+- Negative discount injected: booking_id=90081
+- Excessive discount injected: booking_id=90091
+- Invalid guest_id reference injected: booking_id=90101
+- Invalid room_id reference injected: booking_id=90111
+- Invalid hotel_id reference injected: booking_id=90121
+- Invalid booking_status injected: booking_id=90131
+- Invalid booking_channel injected: booking_id=90141
+- Multiple bookings same date for same guest injected: guest_id=7119, booking_date=2025-08-03
+- Invalid preference value injected for guest_id=7006
+- Guests with missing preferences injected: [7146, 7147, 7148, 7149, 7150]
