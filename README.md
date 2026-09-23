@@ -9,7 +9,7 @@ analysis, and an object-oriented analytics engine.
 Requires Python 3.8+ and the standard library only — no `pip install` needed.
 
 ```bash
-git clone <this-repo-url>
+git clone https://github.com/likithau-17/hotel-booking-intelligence.git
 cd Case_Study_08_hospitality
 
 # 1. (Optional) Regenerate the dataset — a dataset is already committed under data/,
