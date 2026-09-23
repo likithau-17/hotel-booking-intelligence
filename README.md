@@ -4,43 +4,6 @@ A pure-Python (no Pandas / NumPy / SQL) hotel booking intelligence system
 built across three stages: data validation & aggregation, DSA-driven
 analysis, and an object-oriented analytics engine.
 
-## Quick start (reproduce from a fresh clone)
-
-Requires Python 3.8+ and the standard library only — no `pip install` needed.
-
-```bash
-git clone https://github.com/likithau-17/hotel-booking-intelligence.git
-cd Case_Study_08_hospitality
-
-# 1. (Optional) Regenerate the dataset — a dataset is already committed under data/,
-#    this only matters if you want a fresh/different run. Uses a fixed random
-#    seed, so it always reproduces the same numbers.
-python3 generate_data.py
-
-# 2. Day 1 — validation + fundamental analysis
-python3 day_1_analysis.py
-
-# 3. Day 2 — DSA & algorithmic analysis (reruns Day 1 internally, so you'll
-#    see both outputs)
-python3 day_2_dsa.py
-
-# 4. Day 3 — OOPS-based analytics engine (self-contained; loads data independently)
-python3 day_3_oops.py
-```
-
-Or all three analysis stages in one shot:
-
-```bash
-python3 day_1_analysis.py && python3 day_2_dsa.py && python3 day_3_oops.py
-```
-
-Each script prints its full report to stdout. To save output instead of
-scrolling: `python3 day_2_dsa.py > day2_output.txt`.
-
-`data/__init__.py` is required (not optional) — `day_2_dsa.py` imports
-`guest_preferences` as `from data.guest_preferences import ...`, which needs
-`data/` to be a proper Python package.
-
 ## Project structure
 
 ```
@@ -207,10 +170,3 @@ database/index) to avoid holding everything in memory at once.
   discovered during loading, and caught by the loader so one bad row
   doesn't crash the whole load — mirroring the same
   isolate-don't-crash philosophy used in Day 1's validation functions.
-
-## Restrictions honored
-
-No Pandas, NumPy, SQL, Excel formulas, or external analytics libraries are
-used anywhere in this project — only `datetime` and `collections` from the
-standard library (plus the ordinary Python data structures: lists, dicts,
-sets, tuples).
